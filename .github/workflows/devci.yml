@@ -1,0 +1,24 @@
+name: dev branch ci
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Post to a Slack channel
+        # id: slack_send
+        uses: "./.github/actions/customslack"
+        with:
+          channelId: "${{ secrets.CHANNEL_ID }}"
+          prTitle: pr제목입니당
+          author: 우석쿤
+          url: https://naver.com
+          repo: 레포레포
+          slackToken: ${{ secrets.SLACK_BOT_TOKEN }}

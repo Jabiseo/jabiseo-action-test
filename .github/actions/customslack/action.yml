@@ -1,0 +1,28 @@
+name: "custom slack"
+
+inputs:
+  channelId: # can channelId and userId
+    required: false
+
+  prTitle: # using shot text
+    required: true
+
+  author: # pull request author
+    required: true
+
+  url: #pull request URL
+    required: false
+
+  statusColor: #
+    required: false
+    default: "#fcba03"
+
+  repo:
+    required: true
+
+  slackToken:
+    required: true
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

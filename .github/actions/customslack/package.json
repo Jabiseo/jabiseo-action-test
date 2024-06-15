@@ -1,0 +1,16 @@
+{
+  "name": "send-slack-noti",
+  "version": "1.0.0",
+  "description": "A GitHub Action to send a notification to slack",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.5.0",
+    "node-fetch": "^2.7.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
