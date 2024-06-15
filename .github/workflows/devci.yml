@@ -20,5 +20,6 @@ jobs:
           prTitle: pr제목입니당
           author: 우석쿤
           url: https://naver.com
-          repo: 레포레포
           slackToken: ${{ secrets.SLACK_BOT_TOKEN }}
+        env:
+          T_TEST: "nice"

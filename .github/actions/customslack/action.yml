@@ -1,4 +1,9 @@
 name: "custom slack"
+description: "custom slack"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
 
 inputs:
   channelId: # can channelId and userId
@@ -17,12 +22,5 @@ inputs:
     required: false
     default: "#fcba03"
 
-  repo:
-    required: true
-
   slackToken:
     required: true
-
-runs:
-  using: "node20"
-  main: "dist/index.js"
