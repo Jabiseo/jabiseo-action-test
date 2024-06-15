@@ -2,8 +2,6 @@ const core = require("@actions/core");
 const fetch = require("node-fetch");
 
 function generatePayload({ text, channel, color, prTitle, author, repo, url }) {
-  console.log("payload ==> ");
-  console.log(JSON.stringify({ text, channel, color, prTitle, author, repo, url }));
   return {
     text,
     channel,
@@ -63,14 +61,17 @@ function generatePayload({ text, channel, color, prTitle, author, repo, url }) {
 
 async function run() {
   const CHAT_POST_MESSAGE_URL = "https://slack.com/api/chat.postMessage";
+  const { GITHUB_REPOSITORY, T_TEST } = process.env;
+  console.log(T_TEST);
   try {
     const prTitle = core.getInput("prTitle");
     const author = core.getInput("author");
     const statusColor = core.getInput("statusColor");
     const channelId = core.getInput("channelId");
-    const repo = core.getInput("repo");
+    const repo = GITHUB_REPOSITORY;
     const url = core.getInput("url");
     const slackToken = core.getInput("slackToken");
+
     const text = "GITHUB CI 결과";
 
     const payload = generatePayload({ text, channel: channelId, color: statusColor, prTitle, author, repo, url });
