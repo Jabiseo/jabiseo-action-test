@@ -16,10 +16,10 @@ jobs:
         # id: slack_send
         uses: "./.github/actions/customslack"
         with:
+          mode: PR
           channelId: "${{ secrets.CHANNEL_ID }}"
           prTitle: pr제목입니당
           author: 우석쿤
-          url: https://naver.com
-          slackToken: ${{ secrets.SLACK_BOT_TOKEN }}
+          pullRequestUrl: https://naver.com
         env:
-          T_TEST: "nice"
+          SLACK_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

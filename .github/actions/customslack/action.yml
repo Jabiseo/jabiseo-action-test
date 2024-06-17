@@ -6,21 +6,24 @@ runs:
   main: "dist/index.js"
 
 inputs:
-  channelId: # can channelId and userId
+  mode: #set mode (PR/REVIEW/ and other)
     required: false
 
-  prTitle: # using shot text
+  channelId: # can channelId and userId
     required: true
+
+  prTitle: # using shot text
+    required: false
 
   author: # pull request author
-    required: true
+    required: false
 
-  url: #pull request URL
+  pullRequestUrl: #pull request URL
     required: false
 
   statusColor: #
     required: false
     default: "#fcba03"
 
-  slackToken:
-    required: true
+  payload:
+    required: false
