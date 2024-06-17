@@ -18,8 +18,5 @@ jobs:
         with:
           mode: PR
           channelId: "${{ secrets.CHANNEL_ID }}"
-          prTitle: pr제목입니당
-          author: 우석쿤
-          pullRequestUrl: https://naver.com
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

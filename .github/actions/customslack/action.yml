@@ -12,15 +12,6 @@ inputs:
   channelId: # can channelId and userId
     required: true
 
-  prTitle: # using shot text
-    required: false
-
-  author: # pull request author
-    required: false
-
-  pullRequestUrl: #pull request URL
-    required: false
-
   statusColor: #
     required: false
     default: "#fcba03"
